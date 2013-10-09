@@ -1,4 +1,11 @@
 Opcs::Application.routes.draw do
+  get "codes/index"
+  get "codes/show"
+  get "codes/new"
+  get "codes/create"
+  get "codes/edit"
+  get "codes/update"
+  get "codes/destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
