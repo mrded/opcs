@@ -1,2 +1,14 @@
 h1 Codes#index
 p Find me in app/views/codes/index.html.slim
+
+table
+  thead
+    tr
+      th Code
+      th Description
+  tbody
+    - @codes.each do |code|
+      tr
+        td= code.code
+        td= code.description
+
