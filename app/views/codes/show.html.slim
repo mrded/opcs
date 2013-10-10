@@ -1,2 +1,5 @@
 h1 Codes#show
 p Find me in app/views/codes/show.html.slim
+
+h2= link_to(@code.code, "/codes/#{@code.id}")
+p= @code.description

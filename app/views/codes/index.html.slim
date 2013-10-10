@@ -9,6 +9,5 @@ table
   tbody
     - @codes.each do |code|
       tr
-        td= code.code
+        td= link_to(code.code, "/codes/#{code.id}")
         td= code.description
-
