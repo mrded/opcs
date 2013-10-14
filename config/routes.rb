@@ -1,9 +1,8 @@
 Opcs::Application.routes.draw do
+  root :to => "pages#index"
 
-  root :to => "codes#index"
-
-  get "codes/index"
-  get "codes/show"
+  get "codes" => "codes#index"
+  get "codes/:id" => "codes#show"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
