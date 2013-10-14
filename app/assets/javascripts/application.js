@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require twitter/typeahead.min
+
+$(document).ready(function() {
+  $('.typeahead').typeahead( {
+    name: 'codes',
+    local: [ "X99.7", "X99.8", "X99.9"],
+    limit: 10
+  });
+});
+
