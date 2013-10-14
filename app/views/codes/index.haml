@@ -1,0 +1,12 @@
+%h1 Codes#index
+
+%table
+  %thead
+    %tr
+      %th Code
+      %th Description
+  %tbody
+    - @codes.each do |code|
+      %tr
+        %td= link_to(code.code, "/codes/#{code.id}")
+        %td= code.description
