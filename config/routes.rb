@@ -2,7 +2,8 @@ Opcs::Application.routes.draw do
 
   root :to => "codes#index"
 
-  resources :codes
+  get "codes/index"
+  get "codes/show"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
