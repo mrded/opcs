@@ -5,13 +5,17 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'csv'
 
 puts '-> CODES:'
-codes = [
-  {code: 'X99.7', description: 'Not known'},
-  {code: 'X99.8', description: 'Outpatient procedure carried out but no appropriate OPCS-4 code available'},
-  {code: 'X99.9', description: 'No outpatient procedure carried out'},
-]
+codes = []
+
+CSV.foreach Rails.root.join('db', 'import', 'codes.csv') do |row|
+  codes << {
+    code: row[0],
+    description: row[1],
+  }
+end
 
 Code.create(codes).each do | code |
   puts 'Code: ' << code[:code]
