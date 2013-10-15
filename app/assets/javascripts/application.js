@@ -15,12 +15,18 @@
 //= require turbolinks
 //= require_tree .
 //= require twitter/typeahead.min
+//= require hogan.js
 
 $(document).ready(function() {
   $('.typeahead').typeahead( {
     name: 'codes',
-    local: [ "X99.7", "X99.8", "X99.9"],
-    limit: 10
+    prefetch: 'codes/index',
+    limit: 10,
+    template: [
+      '<p class="code">{{code}}</p>',
+      '<p class="description">{{description}}</p>'
+    ].join(''),
+    engine: Hogan
   });
 });
 
