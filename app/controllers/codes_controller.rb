@@ -1,11 +1,6 @@
 class CodesController < ApplicationController
   def index
-    if params[:search]
-      @codes = Code.find(:all, conditions: ['code LIKE ?', "%#{params[:search]}%"])
-    else
-      @codes = Code.all
-    end
-
+    @codes = Code.search(params[:search])
     render json: @codes if params[:format] == 'json'
   end
 
