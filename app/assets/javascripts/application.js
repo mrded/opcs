@@ -16,19 +16,4 @@
 //= require_tree .
 //= require twitter/typeahead.min
 //= require hogan.js
-
-$(document).ready(function() {
-  $('.typeahead').typeahead(
-    {
-      name: 'codes',
-      prefetch: '/codes/index.json',
-      limit: 10,
-      template: [
-        '<p class="code">{{code}}</p>',
-        '<p class="description">{{description}}</p>'
-      ].join(''),
-      engine: Hogan
-    }
-  );
-});
-
+//= require twitter-typeahead
