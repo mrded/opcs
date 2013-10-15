@@ -1,7 +1,7 @@
 Opcs::Application.routes.draw do
   root :to => "pages#index"
 
-  get "codes/index"
+  get "codes/index(.:format)"
   get "codes/:id" => "codes#show"
 
   # The priority is based upon order of creation: first created -> highest priority.

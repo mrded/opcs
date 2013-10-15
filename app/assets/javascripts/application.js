@@ -18,15 +18,17 @@
 //= require hogan.js
 
 $(document).ready(function() {
-  $('.typeahead').typeahead( {
-    name: 'codes',
-    prefetch: 'codes/index',
-    limit: 10,
-    template: [
-      '<p class="code">{{code}}</p>',
-      '<p class="description">{{description}}</p>'
-    ].join(''),
-    engine: Hogan
-  });
+  $('.typeahead').typeahead(
+    {
+      name: 'codes',
+      prefetch: '/codes/index.json',
+      limit: 10,
+      template: [
+        '<p class="code">{{code}}</p>',
+        '<p class="description">{{description}}</p>'
+      ].join(''),
+      engine: Hogan
+    }
+  );
 });
 

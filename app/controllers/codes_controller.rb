@@ -1,6 +1,7 @@
 class CodesController < ApplicationController
   def index
-    render json: Code.all
+    @codes = Code.all
+    render json: @codes if params[:format] == 'json'
   end
 
   def show
