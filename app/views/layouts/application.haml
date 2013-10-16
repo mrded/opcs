@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title Opcs
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    %meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
+
+    / Bootstrap
+    %link{href: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css", rel: "stylesheet"}/
+
+    / Optional theme
+    %link{href: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css", rel: "stylesheet"}/
+
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      %script{src: "../../assets/js/html5shiv.js"}
+      %script{src: "../../assets/js/respond.min.js"}
+
+  %body
+    .container= yield
+
+    / Include all compiled plugins (below), or include individual files as needed
+    %script{src: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"}
