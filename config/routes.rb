@@ -1,6 +1,7 @@
 Opcs::Application.routes.draw do
   root :to => "pages#index"
 
+  get "codes" => "codes#index"
   get "codes/index(.:format)"
   get "codes/:id" => "codes#show"
 
