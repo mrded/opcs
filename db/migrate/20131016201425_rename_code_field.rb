@@ -1,9 +1,9 @@
 class RenameCodeField < ActiveRecord::Migration
-  def self.up
+  def up
     rename_column :codes, :code, :name
   end
 
-  def self.down
+  def down
     rename_column :codes, :name, :code
   end
 end
