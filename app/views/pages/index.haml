@@ -1,8 +1,9 @@
-.jumbotron
-  .container
-    %h1 OPCS Procedure Codes
-    = form_tag '/codes/index', method: "get", class: 'form-inline'  do
-      .form-group
-        = search_field_tag :search, nil, class: 'typeahead form-control input-lg', placeholder: 'Enter Code'
+%h1
+  OPCS
+  %small Operating Procedure Codes
 
-      = submit_tag "Search", class: "btn btn-primary btn-lg"
+= form_tag '/codes/index', method: "get", class: 'form-inline text-center'  do
+  .form-group
+    = search_field_tag :search, nil, class: 'typeahead form-control input-lg', placeholder: 'Enter Code'
+
+  = submit_tag "Search", class: "btn btn-primary btn-lg"
