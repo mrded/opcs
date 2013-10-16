@@ -1,0 +1,12 @@
+%h1 Categories#index
+
+%table.table
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %th.text-center{colspan: 2}= link_to(category.name, "/category/#{category.id}")
+
+      - category.codes.each do |code|
+        %tr
+          %td= link_to(code.name, "/codes/#{code.id}")
+          %td= code.description
