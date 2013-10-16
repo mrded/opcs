@@ -1,4 +1,6 @@
 Opcs::Application.routes.draw do
+  get "categories/index"
+  get "categories/show"
   root :to => "pages#index"
 
   get "codes" => "codes#index"
