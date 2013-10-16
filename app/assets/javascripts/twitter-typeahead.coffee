@@ -4,7 +4,7 @@ $(document).ready ->
     prefetch: "/codes/index.json"
     limit: 10
     template: [
-      "<p class='code'>{{code}}</p>",
+      "<p class='code'>{{name}}</p>",
       "<p class='description'>{{description}}</p>"
     ].join("")
     engine: Hogan

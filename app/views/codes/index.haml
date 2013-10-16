@@ -8,5 +8,5 @@
   %tbody
     - @codes.each do |code|
       %tr
-        %td= link_to(code.code, "/codes/#{code.id}")
+        %td= link_to(code.name, "/codes/#{code.id}")
         %td= code.description
