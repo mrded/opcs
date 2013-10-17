@@ -36,11 +36,11 @@ group :doc do
 end
 
 group :production, :staging do
-  gem 'pg'
+  gem "mysql2", "~> 0.3.13"
 end
 
 group :development, :test do
-  gem 'sqlite3'
+  gem "mysql2", "~> 0.3.13"
 end
 
 # Use ActiveModel has_secure_password
