@@ -37,6 +37,7 @@ end
 
 group :production, :staging do
   gem "mysql2", "~> 0.3.13"
+  gem 'newrelic_rpm'
 end
 
 group :development, :test do
