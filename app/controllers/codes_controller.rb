@@ -1,8 +1,16 @@
 class CodesController < ApplicationController
+
   def index
     @codes = Code.search(params[:search])
-    render json: @codes if params[:format] == 'json'
+
+    if params[:format] == 'json'
+      render json: @codes,
+        only: [:id, :name, :description, :value],
+        methods: [:value]
+    end
+
   end
+
 
   def show
     @code = Code.find params[:id]

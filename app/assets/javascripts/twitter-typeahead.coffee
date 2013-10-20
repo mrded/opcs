@@ -1,12 +1,11 @@
 $(document).ready ->
   $("input.typeahead").typeahead
-    name: "codes"
-    prefetch: "/codes/index.json"
-    limit: 10
+    name: "codes",
+    remote: "/codes/index.json?search=%QUERY",
+    limit: 10,
     template: [
-      "<p class='code'>{{name}}</p>",
-      "<p class='description'>{{description}}</p>"
-    ].join("")
+      "<p><strong>{{name}}</strong> - {{description}}</p>",
+    ].join(""),
     engine: Hogan
 
   $(".typeahead.input-sm").siblings("input.tt-hint").addClass "hint-small"
