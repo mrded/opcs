@@ -8,7 +8,11 @@ class Code < ActiveRecord::Base
   end
 
   def self.search (search)
-    # :limit => 10
-    search ? find(:all, conditions: ['description LIKE ?', "%#{search}%"]) : all
+    if search
+      # :limit => 10
+      find :all, conditions: ['description LIKE ? OR name LIKE ?', "%#{search}%", "%#{search}%"]
+    else
+      all
+    end
   end
 end
