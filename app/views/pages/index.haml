@@ -2,8 +2,14 @@
   OPCS
   %small Operating Procedure Codes
 
-= form_tag '/codes/index', method: "get", class: 'form-inline'  do
-  .form-group
-    = search_field_tag :search, nil, class: 'typeahead form-control input-lg', placeholder: 'Enter Code'
-
-  = submit_tag "Search", class: "btn btn-primary btn-lg"
+%div{"ng-controller" => "FetchCtrl"}
+  %pre http status code: {{status}}
+  Search:
+  %input{"ng-model" => "searchText"}
+  %table#searchTextResults
+    %tr
+      %th Name
+      %th Description
+    %tr{"ng-repeat" => "code in codes | filter:searchText"}
+      %td {{code.name}}
+      %td {{code.description}}
