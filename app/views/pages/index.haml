@@ -4,9 +4,9 @@
 
 %div{"ng-controller" => "FetchCtrl"}
   %pre http status code: {{status}}
-  Search:
-  %input{"ng-model" => "searchText"}
-  %table#searchTextResults
+
+  %input.form-control{"ng-model" => "searchText", placeholder: 'Search'}
+  %table#searchTextResults.table.table-striped
     %tr
       %th Name
       %th Description
