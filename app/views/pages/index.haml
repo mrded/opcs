@@ -6,10 +6,8 @@
   %pre http status code: {{status}}
 
   %input.form-control{"ng-model" => "searchText", placeholder: 'Search'}
-  %table#searchTextResults.table.table-striped
-    %tr
-      %th Name
-      %th Description
-    %tr{"ng-repeat" => "code in codes | filter:searchText"}
-      %td {{code.name}}
-      %td {{code.description}}
+
+  .list-group
+    %a.list-group-item{href: "#", 'ng-repeat' => "code in codes | filter:searchText"}
+      %h4.list-group-item-heading {{code.name}}
+      %p.list-group-item-text {{code.description}}
