@@ -13,7 +13,6 @@ class CodesController < ApplicationController
     end
   end
 
-
   def show
     @code = Code.find params[:id]
   end
