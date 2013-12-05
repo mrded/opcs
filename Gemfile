@@ -26,24 +26,21 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem "twitter-typeahead-rails", "~> 0.9.3"
-
 gem "hogan_assets", "~> 1.6.0"
 gem "angularjs-rails", "~> 1.2.3"
+
+gem "mysql2", "~> 0.3.13"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
-group :production, :staging do
-  gem "mysql2", "~> 0.3.13"
-  gem 'newrelic_rpm'
-end
+#group :production, :staging do
+#end
 
-group :development, :test do
-  gem "mysql2", "~> 0.3.13"
-end
+#group :development, :test do
+#end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
