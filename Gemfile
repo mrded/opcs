@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 1.2'
 gem "twitter-typeahead-rails", "~> 0.9.3"
 
 gem "hogan_assets", "~> 1.6.0"
-gem "angularjs-rails", "~> 1.0.8"
+gem "angularjs-rails", "~> 1.2.3"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
