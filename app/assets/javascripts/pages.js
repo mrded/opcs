@@ -1,6 +1,9 @@
+var opcsApp = angular.module('opcsApp', []);
 
-function FetchCtrl($scope, $http, $templateCache) {
-    $http({method: 'GET', url: 'codes.json', cache: $templateCache}).
+opcsApp.controller('FetchCtrl', function FetchCtrl($scope, $http, $templateCache) {
+
+    $scope.searchText = function() {
+      $http({method: 'GET', url: 'codes.json?search=' + $scope.search, cache: $templateCache}).
         success(function(data, status) {
             $scope.status = status;
             $scope.data = data;
@@ -10,4 +13,5 @@ function FetchCtrl($scope, $http, $templateCache) {
             $scope.data = data || "Request failed";
             $scope.status = status;
         });
-};
+    }
+});

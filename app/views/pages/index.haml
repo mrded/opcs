@@ -5,9 +5,10 @@
 %div{"ng-controller" => "FetchCtrl"}
   %pre http status code: {{status}}
 
-  %input.form-control{"ng-model" => "searchText", placeholder: 'Search'}
+  %input.form-control{placeholder: 'Search', 'ng-model' => 'search'}
+  %button.btn{'ng-click' => "searchText()"} Search
 
   .list-group
-    %a.list-group-item{href: "#", 'ng-repeat' => "code in codes | filter:searchText"}
+    %a.list-group-item{href: "#", 'ng-repeat' => "code in codes"}
       %h4.list-group-item-heading {{code.name}}
       %p.list-group-item-text {{code.description}}
