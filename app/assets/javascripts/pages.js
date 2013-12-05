@@ -1,6 +1,6 @@
 var opcsApp = angular.module('opcsApp', []);
 
-opcsApp.controller('FetchCtrl', function FetchCtrl($scope, $http) {
+opcsApp.controller("FetchCtrl", ['$scope', '$http', function($scope, $http) {
   $scope.searchText = function() {
     // If enter has been pressed.
     if (event.keyCode == 13 && $scope.search){
@@ -9,4 +9,4 @@ opcsApp.controller('FetchCtrl', function FetchCtrl($scope, $http) {
       });
     }
   }
-});
+}]);
