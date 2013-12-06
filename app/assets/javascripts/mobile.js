@@ -18,6 +18,7 @@ if (android) {
     page.style.height = window.innerHeight + 'px'
   }
 }
+
 var setupScroll = window.onload = function() {
   // Start out by adding the height of the location bar to the width, so that
   // we can scroll past it
@@ -39,11 +40,13 @@ var setupScroll = window.onload = function() {
   // after it fires the onload event
   setTimeout(scrollTo, 0, 0, 1);
 };
-(window.onresize = function() {
-  var pageWidth = page.offsetWidth;
-  // Android doesn't support orientation change, so check for when the width
-  // changes to figure out when the orientation changes
-  if (lastWidth == pageWidth) return;
-  lastWidth = pageWidth;
-  setupScroll();
-})();
+
+//@TODO: It doesn't works.
+//(window.onresize = function() {
+//  var pageWidth = page.offsetWidth || 0;
+//  // Android doesn't support orientation change, so check for when the width
+//  // changes to figure out when the orientation changes
+//  if (lastWidth == pageWidth) return;
+//  lastWidth = pageWidth;
+//  setupScroll();
+//})();
