@@ -1,6 +1,6 @@
 %h1
   OPCS
-  %small Operating Procedure Codes
+  %small.visible-sm.visible-md.visible-lg Operating Procedure Codes
 
 %div{"ng-controller" => "FetchCtrl"}
   %form.form-inline{role:"form"}
@@ -8,6 +8,7 @@
       %input.form-control{type:'text', placeholder: 'Search', 'ng-model' => 'search'}
     %button.btn{type: 'submit', 'ng-click' => 'searchText()'} Search
 
+  %hr
   .list-group
     %a.list-group-item{href: "/code/{{code.id}}", 'ng-repeat' => "code in codes"}
       %h4.list-group-item-heading {{code.name}}
