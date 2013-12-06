@@ -7,6 +7,10 @@
     = csrf_meta_tags
     %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", name: "viewport"}
 
+    / Hide the address bar in a fullscreen iPhone or Android web app.
+    %meta{content: "yes", name: "apple-mobile-web-app-capable"}
+    %meta{content: "black", name: "apple-mobile-web-app-status-bar-style"}
+
     / Bootstrap
     %link{href: "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css", rel: "stylesheet"}/
 
