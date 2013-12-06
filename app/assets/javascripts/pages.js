@@ -6,7 +6,7 @@ opcsApp.controller("FetchCtrl", [
     $scope.searchText = function() {
       $http.get('codes.json?search=' + $scope.search).then(function(result){
         $scope.codes = result.data;
-        $location.search({search: $scope.search}).replace();
+        $location.search({search: $scope.search || ''}).replace();
       });
     }
 
