@@ -3,8 +3,17 @@ var opcsApp = angular.module('opcsApp', []);
 opcsApp.controller("FetchCtrl", [
   '$scope', '$http', '$location', function($scope, $http, $location) {
 
+    var progressMode = function(status) {
+      $scope.hideProgress = !status;
+      $scope.hideButton = status;
+    }
+
     $scope.searchText = function() {
-      $http.get('codes.json?search=' + $scope.search).then(function(result){
+      progressMode(true);
+
+      $http.get('codes.json?search=' + $scope.search).then(function(result) {
+        progressMode(false);
+
         $scope.codes = result.data;
         $location.search({search: $scope.search || ''}).replace();
       });
