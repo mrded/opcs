@@ -1,11 +1,9 @@
 class CodesController < ApplicationController
 
   def index
-    @codes = Code.search(params[:search]).last(30)
-
     respond_to do |format|
-      format.html
       format.json do
+        @codes = params[:search].blank? ? [] : Code.search(params[:search]).last(30)
         render json: @codes,
                only: [:id, :name, :description]
       end
