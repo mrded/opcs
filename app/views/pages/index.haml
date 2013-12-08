@@ -10,10 +10,12 @@
     .progress.progress-striped.active{'ng-hide' => "hideProgress",}
       .progress-bar{role: "progressbar", style:"width: 100%"}
 
-    %button.btn.btn-primary{type: 'submit', 'ng-hide' => "hideButton", 'ng-click' => 'searchText()'} Search
+    %button.btn.btn-primary{'ng-hide' => "hideButton", 'ng-click' => 'searchText()'} Search
 
   %hr
   .list-group
-    %a.list-group-item{href: "/code/{{code.id}}", 'ng-repeat' => "code in codes"}
+    %a.list-group-item{"data-target" => "#showCode{{code.id}}", "data-toggle" => "modal", 'ng-repeat' => "code in codes"}
       %h4.list-group-item-heading {{code.name}}
       %p.list-group-item-text {{code.description}}
+
+  = render 'modal'
