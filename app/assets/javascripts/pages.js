@@ -2,22 +2,17 @@ var opcsApp = angular.module('opcsApp', []);
 
 opcsApp.controller("FetchCtrl", [
   '$scope', '$http', '$location', function($scope, $http) {
-
-    var progressMode = function(status) {
-      $scope.hideProgress = !status;
-      $scope.hideButton = status;
-    }
+    var btn = Ladda.create(document.querySelector('button.ladda-button'));
 
     $scope.searchText = function() {
-      progressMode(true);
+      btn.start();
 
       $http.get('codes.json?search=' + $scope.search).then(function(result) {
-        progressMode(false);
+        btn.stop();
         $scope.codes = result.data;
       });
     }
 
     // Init.
-    progressMode(false);
   }]
 );

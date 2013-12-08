@@ -15,4 +15,8 @@
 //= require turbolinks
 //= require hogan.js
 //= require angular
+
+//= require ladda-bootstrap/spin
+//= require ladda-bootstrap/ladda
+
 //= require_tree .
