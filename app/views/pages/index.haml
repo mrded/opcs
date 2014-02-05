@@ -7,8 +7,19 @@
       %span.input-group-btn
         %button.btn.btn-primary.ladda-button{"data-style" => "zoom-out", 'ng-click' => 'searchText()'}
           %span.ladda-label Search
-
+    %p.help-block Enter your procedure for the relevant OPCS Code
   %hr
+
+  .info{'ng-if' => "!codes.length"}
+    %blockquote
+      %p
+        %strong TheatreCodes.co.uk
+        provides a simple method for finding the correct OPCS-4 codes used in the NHS for the classification of interventions and procedures.
+
+      %footer This facility has become increasingly important as surgeons are often expected to self-code cases when patients are listed for a procedure in clinic or on completion of surgery in theatre.
+
+    %p.lead This website is optimized for smartphone use. It can be added as an icon on an iphone or android device using the 'add to the home screen' function.
+
   .list-group
     %a.list-group-item{"data-target" => "#showCode{{code.id}}", "data-toggle" => "modal", 'ng-repeat' => "code in codes"}
       %h4.list-group-item-heading {{code.name}}
