@@ -1,11 +1,4 @@
 Opcs::Application.routes.draw do
-  root :to => "pages#index"
-
-  get "categories" => "categories#index"
-  get "categories/index(.:format)"
-  get "categories/:id" => "categories#show"
-  get "category/:id" => "categories#show"
-
   resources :codes, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.

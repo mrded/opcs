@@ -1,9 +1,0 @@
-.modal.fade{'ng-repeat' => "code in codes", id: "showCode{{code.id}}", "aria-hidden" => "true", "aria-labelledby" => "showCodeLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} &times;
-        %h4#showCodeLabel.modal-title {{code.name}}
-      .modal-body {{code.description}}
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
