@@ -1,8 +1,19 @@
 <ion-view title="Codes">
+
   <ion-content class="has-header">
+
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input type="search" placeholder="Search" ng-model='searchText'>
+      </label>
+      <button class="button button-clear" ng-click='search(searchText)'>Search</button>
+    </div>
+
     <ion-list>
       <ion-item ng-repeat="code in codes" type="item-text-wrap" href="#/tab/code/{{code.id}}">
-        {{code.name}}
+        <h2>{{code.name}}</h2>
+        <p>{{code.description}}</p>
       </ion-item>
     </ion-list>
   </ion-content>
