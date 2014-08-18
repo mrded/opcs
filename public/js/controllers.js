@@ -1,17 +1,21 @@
 angular.module('starter.controllers', [])
 
-.controller('CodesCtrl', function($scope, Codes) {
+.controller('CodesCtrl', function($scope, $ionicLoading, Codes) {
   $scope.search = function(searchText) {
+    $scope.loading = $ionicLoading.show({ content: 'Searching' });
+
     Codes.search(searchText).then(function(results){
       $scope.codes = results;
+      $scope.loading.hide();
     });
   };
 })
 
-.controller('CodeDetailCtrl', function($scope, $stateParams, Codes) {
-   Codes.get($stateParams.codeId).then(function(code){
-    $scope.code = code;
-   });
-})
+.controller('CodeDetailCtrl', function($scope, $stateParams, $ionicLoading, Codes) {
+  $scope.loading = $ionicLoading.show({ content: 'Loading' });
 
-.controller('AboutCtrl', function($scope) {});
+  Codes.get($stateParams.codeId).then(function(code) {
+    $scope.code = code;
+    $scope.loading.hide();
+  });
+});
