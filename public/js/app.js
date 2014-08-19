@@ -61,7 +61,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-about': {
           templateUrl: 'templates/tab-about.html',
-          controller: 'AboutCtrl'
         }
       }
     });
