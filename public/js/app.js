@@ -56,11 +56,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
+    .state('tab.support', {
+      url: '/support',
+      views: {
+        'tab-support': {
+          templateUrl: 'templates/tab-support.html'
+        }
+      }
+    })
+
     .state('tab.about', {
       url: '/about',
       views: {
         'tab-about': {
-          templateUrl: 'templates/tab-about.html',
+          templateUrl: 'templates/tab-about.html'
         }
       }
     });
